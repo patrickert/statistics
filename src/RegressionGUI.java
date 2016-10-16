@@ -61,6 +61,9 @@ public class RegressionGUI {
         y.setVisible(true);
         calculate.setVisible(true);
 
+        frame.revalidate();
+        frame.repaint();
+
 
     }
     private void menu() {
@@ -76,6 +79,7 @@ public class RegressionGUI {
         JButton b1 = new JButton("Show b1");
         JButton sigmaSquare = new JButton("Show sigma square");
         JButton rSquare = new JButton("Show r square");
+        JButton startAgain = new JButton("Start Again");
 
         p.add(sxx);
         p.add(sxy);
@@ -84,6 +88,7 @@ public class RegressionGUI {
         p.add(b1);
         p.add(sigmaSquare);
         p.add(rSquare);
+        p.add(startAgain);
 
 
         sxx.addActionListener((ActionEvent) -> sxx());
@@ -93,6 +98,11 @@ public class RegressionGUI {
         b1.addActionListener((ActionEvent) -> b1());
         sigmaSquare.addActionListener((ActionEvent) -> sigmaSquare());
         rSquare.addActionListener((ActionEvent) -> rSquare());
+        startAgain.addActionListener((ActionEvent) -> {
+                    frame.getContentPane().removeAll();
+                    initialize();
+                });
+
 
         sxx.setVisible(true);
         sxy.setVisible(true);
@@ -101,6 +111,7 @@ public class RegressionGUI {
         b1.setVisible(true);
         sigmaSquare.setVisible(true);
         rSquare.setVisible(true);
+        startAgain.setVisible(true);
 
 
 
